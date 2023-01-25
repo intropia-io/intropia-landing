@@ -30,7 +30,7 @@ const Introduction: React.FC = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="container flex flex-col gap-[38px] justify-center items-center">
+      <div className="container flex flex-col gap-[30px] sm:gap-[38px] justify-center items-center">
         <div className="max-w-[690px] flex flex-col justify-center items-center text-center">
           <img
             className="w-[360px] relative sm:top-[-40px]"
@@ -38,7 +38,7 @@ const Introduction: React.FC = () => {
             alt=""
           />
 
-          <div className="flex flex-col text-center gap-[30px]">
+          <div className="flex flex-col text-center gap-2 sm:gap-[30px]">
             <h1 className="text-white text-3xl sm:text-[44px]">
               You’re just one{" "}
               <span className="whitespace-nowrap">introduction away...</span>
@@ -51,12 +51,12 @@ const Introduction: React.FC = () => {
         </div>
 
         {mailSent ? (
-          <div className="gradientLightBlue p-[1px] rounded-[10px]">
+          <div className="gradientLightBlue p-[1px] rounded-[10px] w-full sm:w-auto ">
             <div className="bg-[#060a1b] rounded-[10px]">
               <div className="gradientBlue rounded-[10px] py-[30px] xs:py-10 px-[30px] sm:px-[50px] flex flex-col gap-[30px]">
-                <p className="flex sm:flex-row flex-col items-center justify-center text-center gap-2.5 font-medium">
-                  <BiCheckCircle size="20" />
-                  You’ve just been whitelisted! Take action now:
+                <p className="flex sm:flex-row flex-col items-center justify-center text-center gap-0 sm:gap-2.5 font-medium">
+                  <BiCheckCircle className="sm:mb-0 mb-2.5" size="20" />
+                  You’ve just been whitelisted! <span className="whitespace-nowrap">Take action now:</span>
                 </p>
                 <div className="flex justify-center sm:flex-row flex-col items-center gap-2.5">
                   <Button
@@ -130,7 +130,7 @@ const Introduction: React.FC = () => {
 
         <div className="flex flex-col mt-[30px] sm:mt-[70px] gap-4 sm:gap-[32px] text-center">
           <p className="text-base text-white opacity-30">
-            They hire smarter on Intropia:
+            They hire smarter on intropia:
           </p>
           <div className="flex flex-row gap-[40px] flex-wrap justify-center">
             <img
