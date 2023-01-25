@@ -110,6 +110,7 @@ const Introduction: React.FC = () => {
           <div className="flex flex-row gap-[40px] flex-wrap justify-center">
             <img
               src={p2p}
+              alt="p2p"
               className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
               onClick={() =>
                 openInNewTab(
@@ -119,6 +120,7 @@ const Introduction: React.FC = () => {
             />
             <img
               src={binaryx}
+              alt="binaryx"
               onClick={() =>
                 openInNewTab(
                   "https://app.intropia.io/organization/clbmaocxb0006l3084zfp992h"
@@ -128,6 +130,7 @@ const Introduction: React.FC = () => {
             />
             <img
               src={underpay}
+              alt="underpay"
               onClick={() =>
                 openInNewTab(
                   "https://app.intropia.io/organization/cld90o11t0000ms08feoxfkyy"
@@ -137,6 +140,7 @@ const Introduction: React.FC = () => {
             />
             <img
               src={coinspaid}
+              alt="coinspaid"
               onClick={() =>
                 openInNewTab(
                   "https://app.intropia.io/organization/cl5if5kn1027509jy5kdon3bw"
