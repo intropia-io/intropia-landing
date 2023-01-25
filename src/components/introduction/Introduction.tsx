@@ -45,7 +45,7 @@ const Introduction: React.FC = () => {
             </h1>
 
             <h2 className="text-white opacity-60 text-lg sm:text-2xl">
-              get a job, capitalize your network, hire best talent
+              get a job, capitalize your network, <span className="whitespace-nowrap">hire best talent</span>
             </h2>
           </div>
         </div>
