@@ -33,7 +33,7 @@ const Introduction: React.FC = () => {
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (pending) return;
-    setPending(false);
+    setPending(true);
 
     fetch(`https://rest.intropia.io/api/whitelist/create`, {
       method: "POST",
@@ -44,7 +44,9 @@ const Introduction: React.FC = () => {
         "Content-Type": "application/json",
         Authorization: `Basic ${process.env.REACT_APP_BASIC_AUTH_CODE}`,
       },
-    }).then((res) => setMailSent(true));
+    })
+      .then((res) => setMailSent(true))
+      .finally(() => setPending(false));
   };
   return (
     <div className="w-full flex justify-center">
