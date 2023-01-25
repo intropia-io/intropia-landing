@@ -33,7 +33,7 @@ const Introduction: React.FC = () => {
       <div className="container flex flex-col gap-[30px] sm:gap-[38px] justify-center items-center">
         <div className="max-w-[690px] flex flex-col justify-center items-center text-center">
           <img
-            className="w-[360px] relative sm:top-[-40px]"
+            className="w-[360px] relative sm:top-[-40px] pb-5 sm:pb-0"
             src={introduction}
             alt=""
           />
