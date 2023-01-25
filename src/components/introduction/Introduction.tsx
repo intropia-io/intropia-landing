@@ -246,7 +246,7 @@ const Introduction: React.FC = () => {
               className="socialCard"
               onClick={(e) => {
                 e.preventDefault();
-                openInNewTab("https://tr3butor.notion.site");
+                openInNewTab("https://intropia.notion.site");
               }}
             >
               <img
