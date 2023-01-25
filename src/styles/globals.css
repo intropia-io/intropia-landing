@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #060a1b;
+}
+
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.gradientOrange {
+  background: linear-gradient(
+    180deg,
+    #f5d08d -0.01%,
+    #f3c67f 14.26%,
+    #f0bc72 28.54%,
+    #eeb265 42.81%,
+    #eca859 57.09%,
+    #eb9d4d 71.36%,
+    #e99242 85.64%,
+    #e78738 99.92%
+  );
+  transition: 0s all;
+}
+
+button.gradientOrange:hover {
+  background: #eca437;
+}
+
+button.gradientOrange:active {
+  background: linear-gradient(
+    180deg,
+    #f5d08d -0.01%,
+    #f3c67f 14.26%,
+    #f0bc72 28.54%,
+    #eeb265 42.81%,
+    #eca859 57.09%,
+    #eb9d4d 71.36%,
+    #e99242 85.64%,
+    #e78738 99.92%
+  );
+}
+
+.gradientBlue {
+  background: linear-gradient(
+      90deg,
+      rgba(5, 190, 254, 0.1755) 8.8%,
+      rgba(41, 46, 69, 0.198) 49.1%
+    ),
+    rgba(41, 46, 69, 0.8);
+}
+
+.gradientLightBlue {
+  transition: 0s all;
+  background: linear-gradient(
+    180deg,
+    #04befe 0%,
+    #00b1f9 14.29%,
+    #00a4f4 28.57%,
+    #0097ee 42.86%,
+    #008ae7 57.14%,
+    #007cdf 71.43%,
+    #066ed6 85.71%,
+    #2660cb 100%
+  );
+}
+
+button.gradientLightBlue:hover {
+  background: #04befe;
+}
+
+@layer components {
+  body {
+    @apply bg-[#060A1B]  text-white;
+  }
+  .container {
+    @apply max-w-[1224px] w-full gap-3 px-5 flex flex-col justify-center relative;
+  }
+  .section {
+    @apply py-[120px] flex flex-col items-center;
+  }
+  .socialCard {
+    @apply duration-300 cursor-pointer rounded-[10px] bg-[#141829] active:bg-[#141829] hover:bg-[rgba(4,190,254,.2)] hover:text-[#04befe] h-[60px] w-[150px] px-2.5 flex flex-row gap-2.5 justify-start items-center;
+  }
+  .footerLink {
+    @apply text-white hover:text-[#04befe] duration-300 opacity-30 active:opacity-100 flex flex-row gap-[5px] items-center;
+  }
+}
