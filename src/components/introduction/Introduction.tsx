@@ -21,6 +21,8 @@ import Button from "components/button/Button";
 const Introduction: React.FC = () => {
   const [mailSent, setMailSent] = useState<boolean>(false);
 
+  const [pending, setPending] = useState(false);
+
   const inputRef = React.useRef<HTMLInputElement>(null);
   const formRef = React.useRef<HTMLFormElement>(null);
 
@@ -28,6 +30,24 @@ const Introduction: React.FC = () => {
     window.open(url, "_blank")?.focus();
   };
 
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (pending) return;
+    setPending(true);
+
+    fetch(`https://rest.intropia.io/api/whitelist/create`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: inputRef.current?.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${process.env.REACT_APP_BASIC_AUTH_CODE}`,
+      },
+    })
+      .then((res) => setMailSent(true))
+      .finally(() => setPending(false));
+  };
   return (
     <div className="w-full flex justify-center">
       <div className="container flex flex-col gap-[30px] sm:gap-[38px] justify-center items-center">
@@ -45,7 +65,8 @@ const Introduction: React.FC = () => {
             </h1>
 
             <h2 className="text-white opacity-60 text-lg sm:text-2xl">
-              get a job, capitalize your network, <span className="whitespace-nowrap">hire best talent</span>
+              get a job, capitalize your network,{" "}
+              <span className="whitespace-nowrap">hire best talent</span>
             </h2>
           </div>
         </div>
@@ -56,7 +77,8 @@ const Introduction: React.FC = () => {
               <div className="gradientBlue rounded-[10px] py-[30px] xs:py-10 px-[30px] sm:px-[50px] flex flex-col gap-[30px]">
                 <p className="flex sm:flex-row flex-col items-center justify-center text-center gap-0 sm:gap-2.5 font-medium">
                   <BiCheckCircle className="sm:mb-0 mb-2.5" size="20" />
-                  You’ve just been whitelisted! <span className="whitespace-nowrap">Take action now:</span>
+                  You’ve just been whitelisted!{" "}
+                  <span className="whitespace-nowrap">Take action now:</span>
                 </p>
                 <div className="flex justify-center sm:flex-row flex-col items-center gap-2.5">
                   <Button
@@ -88,6 +110,7 @@ const Introduction: React.FC = () => {
           </div>
         ) : (
           <form
+            onSubmit={onSubmitHandler}
             ref={formRef}
             className="gradientLightBlue p-[1px] flex flex-row w-full max-w-[540px] rounded-[10px]"
           >
@@ -112,14 +135,8 @@ const Introduction: React.FC = () => {
 
             <div className="w-full h-full">
               <Button
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (!formRef.current?.checkValidity()) {
-                    formRef.current?.reportValidity();
-                    return;
-                  }
-                  setMailSent(true);
-                }}
+                disabled={pending}
+                type="submit"
                 className="gradientLightBlue font-medium hover:text-[#141829] active:text-white rounded-r-[10px] text-sm sm:text-lg w-full h-full flex justify-center items-center"
               >
                 Join the whitelist
