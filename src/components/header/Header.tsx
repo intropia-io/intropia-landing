@@ -16,8 +16,7 @@ const Header = () => {
     <div className="w-full flex justify-center py-4">
       <div className="container flex flex-row justify-between">
         <div
-          onClick={openApp}
-          className="group cursor-pointer flex items-center justify-center bg-[#141829] w-[160px] h-[50px] rounded-[5px] relative"
+          className="group flex items-center justify-center bg-[#141829] w-[160px] h-[50px] rounded-[5px] relative"
         >
           <Logo className="w-[100px]" />
           <LinearLogo className="absolute w-[100px] opacity-0 group-hover:opacity-100 duration-300" />
