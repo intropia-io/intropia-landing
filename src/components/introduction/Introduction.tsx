@@ -22,6 +22,7 @@ const Introduction: React.FC = () => {
   const [mailSent, setMailSent] = useState<boolean>(false);
 
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   const openInNewTab = (url: string) => {
     window.open(url, "_blank")?.focus();
@@ -39,13 +40,13 @@ const Introduction: React.FC = () => {
 
           <div className="flex flex-col text-center gap-[30px]">
             <h1 className="text-white text-3xl sm:text-[44px]">
-              You’re just one introduction away...
+              You’re just one{" "}
+              <span className="whitespace-nowrap">introduction away...</span>
             </h1>
 
-            <p className="text-white opacity-60 text-lg sm:text-2xl">
-              ...from landing the next life-changing job, hiring a superstar, or
-              capitalizing on your network.
-            </p>
+            <h2 className="text-white opacity-60 text-lg sm:text-2xl">
+              get a job, capitalize your network, hire best talent
+            </h2>
           </div>
         </div>
 
@@ -55,52 +56,76 @@ const Introduction: React.FC = () => {
               <div className="gradientBlue rounded-[10px] py-[30px] xs:py-10 px-[30px] sm:px-[50px] flex flex-col gap-[30px]">
                 <p className="flex sm:flex-row flex-col items-center justify-center text-center gap-2.5 font-medium">
                   <BiCheckCircle size="20" />
-                  Hooray! You're in the whitelist! What's next?
+                  You’ve just been whitelisted! Take action now:
                 </p>
                 <div className="flex justify-center sm:flex-row flex-col items-center gap-2.5">
-                  <Button className="gradientLightBlue hover:text-[#141829] active:text-white sm:w-[200px] w-full h-[50px] rounded-[5px] font-medium text-sm flex flex-row justify-center items-center gap-[5px]">
-                    <BiPyramid size="20" /> Explore 600 + Jobs
+                  <Button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      openInNewTab("https://app.intropia.io");
+                    }}
+                    className="gradientLightBlue hover:text-[#141829] active:text-white sm:w-[200px] w-full h-[50px] rounded-[5px] font-medium text-sm flex flex-row justify-center items-center gap-[5px]"
+                  >
+                    <BiPyramid size="20" />
+                    Explore 600 + Jobs
                   </Button>
 
                   <p className="text-white opacity-30">or</p>
 
-                  <Button className="gradientOrange  text-[#141829] font-medium text-sm sm:w-[200px] w-full h-[50px] rounded-[5px] flex flex-row justify-center items-center gap-[5px]">
+                  <Button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      openInNewTab("https://genesis.intropia.io/");
+                    }}
+                    className="gradientOrange text-[#141829] font-medium text-sm sm:w-[200px] w-full h-[50px] rounded-[5px] flex flex-row justify-center items-center gap-[5px]"
+                  >
                     <Crystal />
-                    Mint our Genesis NFT
+                    Mint Genesis NFT
                   </Button>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="gradientLightBlue p-[1px] flex flex-row w-full max-w-[540px] rounded-[10px]">
-            <div
-              onClick={(e) => {
-                e.preventDefault();
-                inputRef.current?.focus();
-              }}
-              className="rounded-l-[10px] h-[70px] min-w-[200px] sm:min-w-[320px] w-full bg-[rgb(28,31,43)] px-5 py-[25px] flex flex-row items-center gap-2.5"
-            >
-              <FiMail size="20" className="min-w-[20px]" />
-              <input
-                ref={inputRef}
-                className="text-sm sm:text-lg overflow-scroll text-white bg-transparent placeholder:text-white placeholder:opacity-30 placeholder:font-medium"
-                placeholder="Type your email..."
-              />
+          <form
+            ref={formRef}
+            className="gradientLightBlue p-[1px] flex flex-row w-full max-w-[540px] rounded-[10px]"
+          >
+            <div className="bg-[#060a1b] rounded-l-[10px] min-w-[200px] sm:min-w-[320px] w-full">
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  inputRef.current?.focus();
+                }}
+                className="rounded-l-[10px] h-[70px] w-full inputBg px-5 py-[25px] flex flex-row items-center gap-2.5"
+              >
+                <FiMail size="20" className="min-w-[20px]" />
+                <input
+                  ref={inputRef}
+                  type="email"
+                  required
+                  className="w-full text-sm sm:text-lg overflow-scroll text-white bg-transparent placeholder:text-white placeholder:opacity-30 placeholder:font-medium"
+                  placeholder="Type your email..."
+                />
+              </div>
             </div>
 
             <div className="w-full h-full">
               <Button
                 onClick={(e) => {
                   e.preventDefault();
+                  if (!formRef.current?.checkValidity()) {
+                    formRef.current?.reportValidity();
+                    return;
+                  }
                   setMailSent(true);
                 }}
-                className="gradientLightBlue hover:text-[#141829] active:text-white rounded-r-[10px] text-sm sm:text-lg w-full h-full flex justify-center items-center"
+                className="gradientLightBlue font-medium hover:text-[#141829] active:text-white rounded-r-[10px] text-sm sm:text-lg w-full h-full flex justify-center items-center"
               >
-                Join the waitlist
+                Join the whitelist
               </Button>
             </div>
-          </div>
+          </form>
         )}
 
         <div className="flex flex-col mt-[30px] sm:mt-[70px] gap-4 sm:gap-[32px] text-center">

@@ -26,9 +26,9 @@ const Header = () => {
         <div>
           <Button
             onClick={openApp}
-            className="gradientOrange rounded-[5px] min-h-[50px] text-[#141829] font-medium text-sm py-2.5 px-[30px] flex flex-row items-center gap-1"
+            className="gradientOrange whitespace-nowrap rounded-[5px] min-h-[50px] text-[#141829] font-medium text-sm py-2.5 px-[30px] flex flex-row items-center gap-1"
           >
-            Explore Jobs <BiLinkExternal size="14" />
+            Explore 600+ jobs <BiLinkExternal size="14" />
           </Button>
         </div>
       </div>

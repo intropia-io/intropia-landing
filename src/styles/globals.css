@@ -23,6 +23,10 @@ input:focus {
   outline: none;
 }
 
+.inputBg {
+  background: rgba(141, 155, 215, 0.2);
+}
+
 .gradientOrange {
   background: linear-gradient(
     180deg,
