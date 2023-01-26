@@ -86,6 +86,7 @@ const Introduction: React.FC = () => {
                       e.preventDefault();
                       openInNewTab("https://app.intropia.io");
                     }}
+                    id="landing-wl-app"
                     className="gradientLightBlue hover:text-[#141829] active:text-white sm:w-[200px] w-full h-[50px] rounded-[5px] font-medium text-sm flex flex-row justify-center items-center gap-[5px]"
                   >
                     <BiPyramid size="20" />
@@ -95,6 +96,7 @@ const Introduction: React.FC = () => {
                   <p className="text-white opacity-30">or</p>
 
                   <Button
+                    id="landing-wl-genesis"
                     onClick={(e) => {
                       e.preventDefault();
                       openInNewTab("https://genesis.intropia.io/");
@@ -199,8 +201,9 @@ const Introduction: React.FC = () => {
           </p>
 
           <div className="flex flex-row gap-4 flex-wrap justify-center">
-            <div
+            <Button
               className="socialCard"
+              id="landing-soc-twitter"
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://twitter.com/intropia");
@@ -212,10 +215,11 @@ const Introduction: React.FC = () => {
                 alt="twitter"
               />
               <p className="text-base">Twitter</p>
-            </div>
+            </Button>
 
-            <div
+            <Button
               className="socialCard"
+              id="landing-soc-discord"
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://discord.gg/intropia");
@@ -227,10 +231,11 @@ const Introduction: React.FC = () => {
                 alt="discord"
               />
               <p className="text-base">Discord</p>
-            </div>
+            </Button>
 
-            <div
+            <Button
               className="socialCard"
+              id="landing-soc-substack"
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://intropia.substack.com");
@@ -242,10 +247,11 @@ const Introduction: React.FC = () => {
                 alt="substack"
               />
               <p className="text-base">Substack</p>
-            </div>
+            </Button>
 
-            <div
+            <Button
               className="socialCard"
+              id="landing-soc-medium"
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://medium.com/@intropia");
@@ -257,10 +263,11 @@ const Introduction: React.FC = () => {
                 alt="medium"
               />
               <p className="text-base">Medium</p>
-            </div>
+            </Button>
 
-            <div
+            <Button
               className="socialCard"
+              id="landing-soc-notion"
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://intropia.notion.site");
@@ -272,22 +279,23 @@ const Introduction: React.FC = () => {
                 alt="notion"
               />
               <p className="text-base">Notion</p>
-            </div>
+            </Button>
 
-            <div
-              className="socialCard"
+            <Button
               onClick={(e) => {
                 e.preventDefault();
                 openInNewTab("https://www.linkedin.com/company/intropia/");
               }}
+              className="socialCard"
+              id="landing-soc-linkedin"
             >
-              <img
-                className="rounded-[10px] w-[40px] h-[40px]"
-                src={linked}
-                alt="linked"
-              />
-              <p className="text-base">LinkedIn</p>
-            </div>
+                <img
+                  className="rounded-[10px] w-[40px] h-[40px]"
+                  src={linked}
+                  alt="linked"
+                />
+                <p className="text-base">LinkedIn</p>
+            </Button>
           </div>
         </div>
       </div>
