@@ -47,17 +47,38 @@
     content="Find web3 jobs and other opportunities, capitalize your network, and hire the best talent">
   <meta name="twitter:image" content="%REACT_APP_PUBLIC_URL%/images/intro-og-landing.jpg">
   <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtm.js?id=%REACT_APP_PUBLIC_GA_ID%" />
-  <script dangerouslySetInnerHTML={{ __html: ` window.dataLayer=window.dataLayer || []; function
-    gtm(){dataLayer.push(arguments);} gtm('js', new Date()); gtm('config', '%REACT_APP_PUBLIC_GA_ID%' , { page_path:
-    window.location.pathname, }); `, }} />
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src =
+        "https://www.googletagmanager.com/gtm.js" +
+        i +
+        dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "?id=%REACT_APP_PUBLIC_GA_ID%");
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtm() {
+      dataLayer.push(arguments);
+    }
+    gtm("js", new Date());
+    gtm("config", '"%REACT_APP_PUBLIC_GA_ID%', {
+      page_path: window.location.pathname,
+    });
+  </script>
   <!-- End Google Tag Manager -->
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%REACT_APP_PUBLIC_GA_ID%" height="0" width="0"
-      style="display:none;visibility:hidden" /></noscript>
+      style="display: none; visibility: hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
