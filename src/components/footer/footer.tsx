@@ -1,9 +1,9 @@
 import { BiLinkExternal } from "react-icons/bi";
 
 export const constants = {
-  COOKIE_URL: "https://tr3butor.notion.site/2631d014ac224f238f31a48ec58f2dc6",
-  PRIVACY_URL: "https://tr3butor.notion.site/2254728e540d40b982f91157adf82b40",
-  TERMS_URL: "https://tr3butor.notion.site/6d643993015c47e9a3e5f8c4ec81777f",
+  COOKIE_URL: "https://intropia.notion.site/2631d014ac224f238f31a48ec58f2dc6",
+  PRIVACY_URL: "https://intropia.notion.site/2254728e540d40b982f91157adf82b40",
+  TERMS_URL: "https://intropia.notion.site/6d643993015c47e9a3e5f8c4ec81777f",
 };
 
 const Footer = () => {
