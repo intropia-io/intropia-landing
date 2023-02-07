@@ -33,7 +33,7 @@ const Layout: React.FC<Props> = ({ children }) => {
               id="landing-header-app"
               className="gradientOrange whitespace-nowrap rounded-[5px] min-h-[50px] text-[#141829] font-medium text-sm py-2.5 px-[30px] flex flex-row items-center gap-1"
             >
-              Explore 600+ jobs <BiLinkExternal size="14" />
+              Explore 800+ jobs <BiLinkExternal size="14" />
             </a>
           </div>
         </div>
