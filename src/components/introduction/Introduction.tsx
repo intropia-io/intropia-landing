@@ -52,11 +52,13 @@ const Introduction: React.FC = () => {
     <div className="w-full flex justify-center">
       <div className="container flex flex-col gap-[30px] sm:gap-[38px] justify-center items-center">
         <div className="max-w-[690px] flex flex-col justify-center items-center text-center">
-          <img
-            className="w-[360px] relative sm:top-[-40px] pb-5 sm:pb-0"
-            src={introduction}
-            alt=""
-          />
+          <div className="h-[310px]">
+            <img
+              className="w-[360px] relative sm:top-[-40px] pb-5 sm:pb-0"
+              src={introduction}
+              alt=""
+            />
+          </div>
 
           <div className="flex flex-col text-center gap-2 sm:gap-[30px]">
             <h1 className="text-white text-3xl sm:text-[44px]">
@@ -81,31 +83,29 @@ const Introduction: React.FC = () => {
                   <span className="whitespace-nowrap">Take action now:</span>
                 </p>
                 <div className="flex justify-center sm:flex-row flex-col items-center gap-2.5">
-                  <Button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openInNewTab("https://app.intropia.io");
-                    }}
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://app.intropia.io"
                     id="landing-wl-app"
                     className="gradientLightBlue hover:text-[#141829] active:text-white sm:w-[200px] w-full h-[50px] rounded-[5px] font-medium text-sm flex flex-row justify-center items-center gap-[5px]"
                   >
                     <BiPyramid size="20" />
                     Explore 600 + Jobs
-                  </Button>
+                  </a>
 
                   <p className="text-white opacity-30">or</p>
 
-                  <Button
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://genesis.intropia.io"
                     id="landing-wl-genesis"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openInNewTab("https://genesis.intropia.io/");
-                    }}
                     className="gradientOrange text-[#141829] font-medium text-sm sm:w-[200px] w-full h-[50px] rounded-[5px] flex flex-row justify-center items-center gap-[5px]"
                   >
                     <Crystal />
                     Mint Genesis NFT
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -152,46 +152,53 @@ const Introduction: React.FC = () => {
             They hire smarter on intropia:
           </p>
           <div className="flex flex-row gap-[40px] flex-wrap justify-center">
-            <img
-              src={p2p}
-              alt="p2p"
-              className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
-              onClick={() =>
-                openInNewTab(
-                  "https://app.intropia.io/organization/cl6m45dgj02540gldee6k68dw"
-                )
-              }
-            />
-            <img
-              src={binaryx}
-              alt="binaryx"
-              onClick={() =>
-                openInNewTab(
-                  "https://app.intropia.io/organization/clbmaocxb0006l3084zfp992h"
-                )
-              }
-              className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
-            />
-            <img
-              src={underpay}
-              alt="underpay"
-              onClick={() =>
-                openInNewTab(
-                  "https://app.intropia.io/organization/cld90o11t0000ms08feoxfkyy"
-                )
-              }
-              className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
-            />
-            <img
-              src={coinspaid}
-              alt="coinspaid"
-              onClick={() =>
-                openInNewTab(
-                  "https://app.intropia.io/organization/cl5if5kn1027509jy5kdon3bw"
-                )
-              }
-              className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
-            />
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://app.intropia.io/organization/cl6m45dgj02540gldee6k68dw"
+            >
+              <img
+                src={p2p}
+                alt="p2p"
+                className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
+              />
+            </a>
+
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://app.intropia.io/organization/clbmaocxb0006l3084zfp992h"
+            >
+              <img
+                src={binaryx}
+                alt="binaryx"
+                className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
+              />
+            </a>
+
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://app.intropia.io/organization/cld90o11t0000ms08feoxfkyy"
+            >
+              <img
+                src={underpay}
+                alt="underpay"
+                className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
+              />
+            </a>
+
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://app.intropia.io/organization/cl5if5kn1027509jy5kdon3bw"
+            >
+              <img
+                src={coinspaid}
+                alt="coinspaid"
+                className="w-[132px] sm:w-[180px] h-[42px] sm:h-[60px] cursor-pointer"
+              />
+            </a>
           </div>
         </div>
 
@@ -201,13 +208,12 @@ const Introduction: React.FC = () => {
           </p>
 
           <div className="flex flex-row gap-4 flex-wrap justify-center">
-            <Button
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://twitter.com/intropia"
               className="socialCard"
               id="landing-soc-twitter"
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://twitter.com/intropia");
-              }}
             >
               <img
                 className="rounded-[10px] w-[40px] h-[40px]"
@@ -215,15 +221,14 @@ const Introduction: React.FC = () => {
                 alt="twitter"
               />
               <p className="text-base">Twitter</p>
-            </Button>
+            </a>
 
-            <Button
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://discord.gg/intropia"
               className="socialCard"
               id="landing-soc-discord"
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://discord.gg/intropia");
-              }}
             >
               <img
                 className="rounded-[10px] w-[40px] h-[40px]"
@@ -231,15 +236,14 @@ const Introduction: React.FC = () => {
                 alt="discord"
               />
               <p className="text-base">Discord</p>
-            </Button>
+            </a>
 
-            <Button
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://intropia.substack.com"
               className="socialCard"
               id="landing-soc-substack"
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://intropia.substack.com");
-              }}
             >
               <img
                 className="rounded-[10px] w-[40px] h-[40px]"
@@ -247,15 +251,14 @@ const Introduction: React.FC = () => {
                 alt="substack"
               />
               <p className="text-base">Substack</p>
-            </Button>
+            </a>
 
-            <Button
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://medium.com/@intropia"
               className="socialCard"
               id="landing-soc-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://medium.com/@intropia");
-              }}
             >
               <img
                 className="rounded-[10px] w-[40px] h-[40px]"
@@ -263,15 +266,14 @@ const Introduction: React.FC = () => {
                 alt="medium"
               />
               <p className="text-base">Medium</p>
-            </Button>
+            </a>
 
-            <Button
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://intropia.notion.site"
               className="socialCard"
               id="landing-soc-notion"
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://intropia.notion.site");
-              }}
             >
               <img
                 className="rounded-[10px] w-[40px] h-[40px]"
@@ -279,23 +281,22 @@ const Introduction: React.FC = () => {
                 alt="notion"
               />
               <p className="text-base">Notion</p>
-            </Button>
+            </a>
 
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                openInNewTab("https://www.linkedin.com/company/intropia/");
-              }}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/company/intropia"
               className="socialCard"
               id="landing-soc-linkedin"
             >
-                <img
-                  className="rounded-[10px] w-[40px] h-[40px]"
-                  src={linked}
-                  alt="linked"
-                />
-                <p className="text-base">LinkedIn</p>
-            </Button>
+              <img
+                className="rounded-[10px] w-[40px] h-[40px]"
+                src={linked}
+                alt="linked"
+              />
+              <p className="text-base">LinkedIn</p>
+            </a>
           </div>
         </div>
       </div>

@@ -50,11 +50,13 @@ input:focus {
   transition: 0s all;
 }
 
-button.gradientOrange:hover {
+button.gradientOrange:hover,
+a.gradientOrange:hover {
   background: #eca437;
 }
 
-button.gradientOrange:active {
+button.gradientOrange:active,
+a.gradientOrange:active {
   background: linear-gradient(
     180deg,
     #f5d08d -0.01%,
@@ -92,7 +94,8 @@ button.gradientOrange:active {
   );
 }
 
-button.gradientLightBlue:hover {
+button.gradientLightBlue:hover,
+a.gradientLightBlue:hover {
   background: #04befe;
 }
 

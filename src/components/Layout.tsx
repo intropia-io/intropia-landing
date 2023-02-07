@@ -15,15 +15,10 @@ export const constants = {
   TERMS_URL: "https://intropia.notion.site/6d643993015c47e9a3e5f8c4ec81777f",
 };
 
-
 const Layout: React.FC<Props> = ({ children }) => {
-  const openApp = useCallback((e: any) => {
-    e.preventDefault();
-    openInNewTab("https://app.intropia.io/");
-  }, []);
   return (
     <main>
-      <div className="w-full flex justify-center py-4">
+      <div className="w-full flex justify-center py-5 sm:py-[40px]">
         <div className="container flex flex-row justify-between">
           <div className="group flex items-center justify-center bg-[#141829] w-[160px] h-[50px] rounded-[5px] relative">
             <Logo className="w-[100px]" />
@@ -31,13 +26,15 @@ const Layout: React.FC<Props> = ({ children }) => {
           </div>
 
           <div>
-            <Button
-              onClick={openApp}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://app.intropia.io/"
               id="landing-header-app"
               className="gradientOrange whitespace-nowrap rounded-[5px] min-h-[50px] text-[#141829] font-medium text-sm py-2.5 px-[30px] flex flex-row items-center gap-1"
             >
-              Explore 600+ jobs <BiLinkExternal size="14" />
-            </Button>
+              Explore 800+ jobs <BiLinkExternal size="14" />
+            </a>
           </div>
         </div>
       </div>
